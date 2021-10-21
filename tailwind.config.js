@@ -24,7 +24,7 @@ module.exports = {
         "4xl": ["2.25rem", "3.7rem"],
         // "5xl": ['2.5rem', '4.5rem'],
         "lg-vw": ["1.1vw", "1.7vw"],
-        "2xl-vw": ["1.25vw", "1.7vw"],
+        "2xl-vw": ["1.25vw", "2vw"],
         "3xl-vw": ["1.6vw", "2.5vw"],
         "8xl": ["6.5rem", "6.5rem"],
         "8xl-vw": ["6.2vw", "6.2vw"],
@@ -40,6 +40,14 @@ module.exports = {
       margin: {
         "3xl": "30vh",
       },
+      height: {
+        'aboutImgDim': "23vw",
+        'aboutImgDim-md': "30vw"
+      },
+      width: {
+        'aboutImgDim': "23vw",
+        'aboutImgDim-md': "30vw"
+      }
     },
   },
   variants: {

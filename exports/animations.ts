@@ -85,6 +85,7 @@ export const fadeUpTextVariant = {
   },
   exit: {
     y: "100%",
+    opacity: 0,
     transition: {
       type: "spring",
       duration: 0.5,
@@ -156,7 +157,7 @@ export const workImage1Variant = {
     y: 0,
     opacity: 1,
     transition: {
-      type: "string",
+      type: "spring",
       duration: 0.7,
       bounce: 0,
     },
@@ -184,7 +185,7 @@ export const aboutTabImgVariant = {
     height: custom,
     opacity: 1,
     transition: {
-      type: "string",
+      type: "spring",
       duration: 0.5,
       bounce: 0,
     },
@@ -193,7 +194,7 @@ export const aboutTabImgVariant = {
     height: 0,
     opacity: 0,
     transition: {
-      type: "string",
+      type: "spring",
       duration: 0.5,
       bounce: 0,
     },
@@ -204,7 +205,7 @@ export const aboutTabContentVariant = {
   animate: {
     y: 10,
     transition: {
-      type: "string",
+      type: "spring",
       duration: 0.5,
       bounce: 0,
     },
@@ -212,9 +213,36 @@ export const aboutTabContentVariant = {
   exit: {
     y: 0,
     transition: {
-      type: "string",
+      type: "spring",
       duration: 0.5,
       bounce: 0,
     },
   },
 };
+
+export const aboutTabletDesktopImgVariant = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+
+    transition: {
+      type: "easeIn",
+      duration: 0.5,
+      bounce: 0,
+    },
+  },
+  disappear: {
+    opacity: 0,
+    y: 0
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      type: "easeIn",
+      duration: 0.5,
+      bounce: 0,
+    },
+  }
+}

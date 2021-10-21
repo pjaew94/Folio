@@ -1,10 +1,19 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeUpTextVariant } from "../exports/animations";
-import { useMediaQuery } from "react-responsive";
+import {useState, useEffect} from 'react'
 
 const JwpWorksLink = () => {
-  const isMobile = useMediaQuery({ maxWidth: 1024 });
+  const [isMobile, setIsMobile] = useState(false);
+  if (typeof window !== "undefined") {
+    useEffect(() => {
+      if (window.innerWidth < 1023) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    }, [window.innerWidth]);
+  }
 
   return (
     <Link href="/work">

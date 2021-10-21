@@ -5,13 +5,22 @@ import { useAnimation } from "framer-motion";
 import { ICustomLink } from "../exports/interfaces";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
 
 const CustomLink: React.FC<ICustomLink> = ({ route, text, index, toWork }) => {
   const linkUnderLineControls = useAnimation();
   const router = useRouter();
-  const isMobile = useMediaQuery({ maxWidth: 1024 });
   const [currPath, setCurrPath] = useState<string>("");
+
+  const [isMobile, setIsMobile] = useState(false);
+  if (typeof window !== "undefined") {
+    useEffect(() => {
+      if (window.innerWidth < 1023) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    }, [window.innerWidth]);
+  }
 
   useEffect(() => {
     setTimeout(() => {

@@ -52,6 +52,6 @@ export interface IAbout {
   section: "Education" | "Leadership" | "Ambitions" | "Programming" | null,
   imgsCrop: IImageSet,
   imgsReg: IImageSet,
-  currFocus?: "Education" | "Leadership" | "Ambitions" | "Programming" | null,
-  setCurrFocus?: Dispatch<SetStateAction<"Education" | "Leadership" | "Ambitions" | "Programming" | null>>
+  currFocus?: this['section'],
+  setCurrFocus?: Dispatch<SetStateAction<this['section']>>
 }

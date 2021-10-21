@@ -30,26 +30,29 @@ const AboutTab: React.FC<IAbout> = ({
   }
 
   useEffect(() => {
-
-    sectionTextControls.start('animate')
+    sectionTextControls.start("animate");
     if (currFocus === section) {
       upperLineControls.start("exit");
       contentControls.start("animate");
-      sectionTextControls.start('slideToTheRight')
+      sectionTextControls.start("slideToTheRight");
     } else {
       upperLineControls.start("animate");
       contentControls.start("exit");
-      sectionTextControls.start('slideToTheLeft')
+      sectionTextControls.start("slideToTheLeft");
     }
   }, [currFocus]);
 
   const tabClicked = () => {
-    setCurrFocus!(section);
+    if (section === currFocus) {
+      setCurrFocus!(null);
+    } else {
+      setCurrFocus!(section);
+    }
   };
 
   return (
     <div
-      className={`${!isMobile && "group"} overflow-hidden cursor-pointer`}
+      className='overflow-hidden cursor-pointer'
       onClick={() => tabClicked()}
     >
       <div className="flex flex-col relative pb-6 3xl:pb-14 h-min">
@@ -62,7 +65,8 @@ const AboutTab: React.FC<IAbout> = ({
         />
 
         <motion.h2
-          className={`group-hover:text-gray ${currFocus === section && 'font-bold'}`}
+          className='group-hover:text-gray'
+       
           variants={textDownVariant}
           initial="initial"
           animate={sectionTextControls}

@@ -1,16 +1,27 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
 import { workImage1Variant } from "../exports/animations";
+import {useState, useEffect} from 'react'
 
 const DraggableImg: React.FC<{ disp: string; blur: string }> = ({
   disp,
   blur,
 }) => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024})
 
-  let draggableLeft = isMobile ? -560 : isTablet ? -200 : 0;
+  const [isWhat, setIsWhat] = useState<'isMobile' | 'isTablet' | null>(null);
+  if (typeof window !== "undefined") {
+    useEffect(() => {
+      if (window.innerWidth < 768) {
+        setIsWhat('isMobile');
+      } else if(window.innerWidth >= 768 && window.innerWidth <= 1024) {
+        setIsWhat('isTablet');
+      } else {
+        setIsWhat(null)
+      }
+    }, [window.innerWidth]);
+  }
+
+  let draggableLeft = isWhat === 'isMobile' ? -560 : isWhat === 'isTablet' ? -200 : 0;
 
   return (
     <motion.div
@@ -19,7 +30,7 @@ const DraggableImg: React.FC<{ disp: string; blur: string }> = ({
       initial="initial"
       animate="animate"
     >
-      <motion.div drag={isMobile || isTablet ? "x" : undefined} dragElastic={0.1} dragConstraints={{left: draggableLeft, right: 0}}>
+      <motion.div drag={isWhat ? "x" : undefined} dragElastic={0.1} dragConstraints={{left: draggableLeft, right: 0}}>
         <Image
           src={disp}
           alt=""

@@ -1,8 +1,8 @@
 import { IProjectInfo, IWorkTab } from "./../exports/interfaces";
 import { motion } from "framer-motion";
 import { workUpperLineVariant, textDownVariant } from "./../exports/animations";
-import { useMediaQuery } from "react-responsive";
 import { useRouter } from "next/router";
+import {useState, useEffect} from 'react'
 
 const WorkTab: React.FC<IWorkTab> = ({
   abbreviation,
@@ -12,7 +12,18 @@ const WorkTab: React.FC<IWorkTab> = ({
   toWork,
   setToWork
 }) => {
-  const isMobile = useMediaQuery({ maxWidth: 1024 });
+
+  const [isMobile, setIsMobile] = useState(false);
+  if (typeof window !== "undefined") {
+    useEffect(() => {
+      if (window.innerWidth < 1023) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    }, [window.innerWidth]);
+  }
+
   const router = useRouter();
 
   const workTabClick = () => {
