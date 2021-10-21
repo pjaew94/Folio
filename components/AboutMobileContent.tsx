@@ -5,7 +5,7 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 import { textUpVariant } from "../exports/animations";
 import { motion } from "framer-motion";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 const AboutMobileContent: React.FC = () => {
 
@@ -13,12 +13,23 @@ const AboutMobileContent: React.FC = () => {
   IAbout['section']
 >(null);
 
+const [isMobile, setIsMobile] = useState(false);
+if (typeof window !== "undefined") {
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, [window.innerWidth]);
+}
+
   return (
-    <div className="flex flex-col justify-between h-screen w-screen x-6 pt-2 pb-5 px-6">
+    <div className="flex flex-col justify-between min-h-screen w-screen x-6 pt-2 pb-5 px-6 bg-beige">
       <div className="flex flex-col w-full">
         <div className="overflow-hidden">
           <motion.h1
-            className="flex"
+            className="flex text-black"
             variants={textUpVariant}
             initial="initial"
             animate="animate"
@@ -46,11 +57,12 @@ const AboutMobileContent: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex justify-between align-bottom fixed bottom-0 left-0 pb-5 px-6 w-min z-10">
-        <Navigation />
-      </div>
-      <div className="flex justify-between align-bottom fixed bottom-0 right-0 pb-5 px-6 z-10">
-        <Footer />
+      <div className="flex flex-col w-full fixed bottom-0 left-0">
+        {isMobile && <div className="w-full h-5 bg-gradient-to-t from-beige z-index-20" />}
+        <div className="flex w-full justify-between px-6 pb-5 md:p-10 3xl:p-16 z-20 bg-beige">
+          <Navigation />
+          <Footer />
+        </div>
       </div>
     </div>
   );

@@ -235,7 +235,7 @@ export const aboutTabletDesktopImgVariant = {
   },
   disappear: {
     opacity: 0,
-    y: 0
+    y: 0,
   },
   exit: {
     opacity: 0,
@@ -244,5 +244,31 @@ export const aboutTabletDesktopImgVariant = {
       duration: 0.5,
       bounce: 0,
     },
+  },
+};
+
+export const resumeSectionVariant = {
+  initial: {
+    opacity: 0,
+    y: 30
+  },
+  animate: (custom: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      duration: 0.5,
+      bounce: 0,
+      delay: custom
+    },
+  }),
+  exit: {
+    opacity: 0,
+    y: 20,
+    transition: {
+      type: "spring",
+      duration: 0.5,
+      bounce: 0,
+    },
   }
-}
+};

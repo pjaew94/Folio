@@ -64,7 +64,7 @@ const WorkTab: React.FC<IWorkTab> = ({
           </motion.h2>
         </div>
         <motion.div
-          className="h-px 3xl:h-1 w-full bg-white absolute top-0 group-hover:bg-gray"
+          className="h-px 3xl:h-1 w-full bg-black absolute top-0 group-hover:bg-gray"
           variants={workUpperLineVariant}
           initial="initial"
           animate="animate"

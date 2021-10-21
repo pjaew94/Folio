@@ -65,7 +65,7 @@ const AboutTab: React.FC<IAbout> = ({
         />
 
         <motion.h2
-          className='group-hover:text-gray'
+          className='group-hover:text-gray text-black'
        
           variants={textDownVariant}
           initial="initial"
@@ -77,7 +77,7 @@ const AboutTab: React.FC<IAbout> = ({
         </motion.h2>
 
         <motion.div
-          className="h-px 3xl:h-1 w-full bg-white absolute top-0 group-hover:bg-gray"
+          className="h-px 3xl:h-1 w-full bg-black absolute top-0 group-hover:bg-gray"
           variants={workUpperLineVariant}
           initial="initial"
           animate="animate"

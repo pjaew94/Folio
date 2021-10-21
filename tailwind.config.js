@@ -13,10 +13,12 @@ module.exports = {
       red: "#EA0F1E",
       white: "#F9F9F9",
       gray: "#A8A8A7",
-      black: black,
+      black: '#28282A',
+      beige: '#EDEAE4'
     },
     extend: {
       fontSize: {
+        'xs-title': ['0.85rem', '1rem'],
         base: ["1.1rem", "2rem"],
         xl: ["1.25rem", "2rem"],
         "2xl": ["1.5rem", "2.5rem"],
@@ -26,6 +28,7 @@ module.exports = {
         "lg-vw": ["1.1vw", "1.7vw"],
         "2xl-vw": ["1.25vw", "2vw"],
         "3xl-vw": ["1.6vw", "2.5vw"],
+        "7xl": ["5.3rem", "6rem"],
         "8xl": ["6.5rem", "6.5rem"],
         "8xl-vw": ["6.2vw", "6.2vw"],
         "9xl": ["10vw", "10vw"],

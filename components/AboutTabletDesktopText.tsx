@@ -25,7 +25,7 @@ const AboutTabletDesktopText: React.FC<{
     <motion.p
       className={`flex items-center absolute top-0 ${
         left ? "left-0 justify-items-end md:pl-8" : "right-0 justify-items-start md:pr-8"
-      } font-sans text-sm leading-6  md:w-aboutImgDim-md md:h-aboutImgDim-md xl:w-aboutImgDim xl:h-aboutImgDim xl:text-base 3xl:text-2xl-vw`}
+      } font-sans text-sm text-black leading-6  md:w-aboutImgDim-md md:h-aboutImgDim-md xl:w-aboutImgDim xl:h-aboutImgDim xl:text-base 3xl:text-2xl-vw`}
 
       variants={aboutTabletDesktopImgVariant}
       initial='initial'

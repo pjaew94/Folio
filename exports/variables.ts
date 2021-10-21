@@ -1,4 +1,10 @@
-import { INavigation, IProjectInfo, IAbout } from "./interfaces";
+import {
+  INavigation,
+  IProjectInfo,
+  IAbout,
+  IWorkExperience,
+  IEducation
+} from "./interfaces";
 
 export const navigation: INavigation[] = [
   {
@@ -224,28 +230,165 @@ export const projectList: IProjectInfo[] = [
 
 export const about: IAbout[] = [
   {
-    imgsCrop: { disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg1Crop.png", blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg1CropBlur.png" },
-    imgsReg: { disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg1.png", blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg1Blur.png" },
+    imgsCrop: {
+      disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg1Crop.png",
+      blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg1CropBlur.png",
+    },
+    imgsReg: {
+      disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg1.png",
+      blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg1Blur.png",
+    },
     section: "Education",
     text: "I'm a Temple University graduate in biochemistry. As much as I loved the biochemical world, my interest began to gravitate toward programming post-graduation. Which ultimately led me to learn to program on my own.",
   },
   {
-    imgsCrop: { disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg2Crop.png", blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg2CropBlur.png" },
-    imgsReg: { disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg2.png", blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg2Blur.png" },
+    imgsCrop: {
+      disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg2Crop.png",
+      blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg2CropBlur.png",
+    },
+    imgsReg: {
+      disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg2.png",
+      blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg2Blur.png",
+    },
     section: "Leadership",
     text: "Since 2015, I've taken the role as praise team leader and president of the young adult group in my church. Through the experience, I've gained a whole new perspective of what it takes to be a leader. Most important realization was this: no matter what position you are in, keep the heart humble, as there is always room to learn from others.",
   },
 
   {
-    imgsCrop: { disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg3Crop.png", blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg3CropBlur.png" },
-    imgsReg: { disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg3.png", blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg3Blur.png" },
+    imgsCrop: {
+      disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg3Crop.png",
+      blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg3CropBlur.png",
+    },
+    imgsReg: {
+      disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg3.png",
+      blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg3Blur.png",
+    },
     section: "Ambitions",
     text: "Aside from programming, there are many things I'm addicted to: such as playing the drums and basketball, reading, and teaching. I came to understand my craftsmanship in these addictions derived from my obsession to improve. My competitive nature is what fuels me to what I do.",
   },
   {
-    imgsCrop: { disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg4Crop.png", blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg4CropBlur.png" },
-    imgsReg: { disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg4.png", blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg4Blur.png" },
+    imgsCrop: {
+      disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg4Crop.png",
+      blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg4CropBlur.png",
+    },
+    imgsReg: {
+      disp: "https://portfolio-fin.s3.amazonaws.com/aboutImg4.png",
+      blur: "https://portfolio-fin.s3.amazonaws.com/aboutImg4Blur.png",
+    },
     section: "Programming",
     text: "Ever since I've learned programming, I've never looked back. Through this skill, I am able to freely create anything I want to, bounded only by my own imagination and capabilities. The endless room for improvement this craft offers is too appealing to let go.",
   },
 ];
+
+export const workExperiences: IWorkExperience[] = [
+  {
+    startDate: "August 2019",
+    endDate: "Current",
+    jobTitle: "Private Tutor",
+    jobDesc:
+      "Tutor and mentor students from elementary school to college level in various subjects, including chemistry, physics, advance maths, SATs, and biology.",
+    company: "Independent",
+    companyLocation: "North Wales, Pennsylvania",
+  },
+  {
+    startDate: "February 2019",
+    endDate: "September 2019",
+    jobTitle: "Biomanufacturing Associate",
+    jobDesc:
+      "Perform purification steps with diverse set of chromatography systems. Ensure work is completed with compliance with approved SOP's, batch records, etc.",
+
+    company: "Endo Pharmaceuticals",
+    companyLocation: "Horsham, Pennsylvania",
+  },
+  {
+    startDate: "January 2018",
+    endDate: "August 2019",
+    jobTitle: "Tutor/Teacher/Mentor",
+    jobDesc:
+      "Teaching and instructing students from middle school to college level in various subjects including chemistry, physics, advance maths, SATs, and biology. Evaluate students performances and adjust accordingly for optimal growth of student's knowledge.",
+
+    company: "GO Learning Center",
+    companyLocation: "Blue Bell, Pennsylvania",
+  },
+  {
+    startDate: "March 2017",
+    endDate: "August 2017",
+    jobTitle: "Medial Assistant Intern",
+    jobDesc:
+      "Assist physicians with procedural preparations and documentations. ",
+
+    company: "Bucks County Orthopedics",
+    companyLocation: "DoylesTown/Warrington, Pennsylvania",
+  },
+  {
+    startDate: "June 2015",
+    endDate: "August 2016",
+    jobTitle: "Pharmacy Technician",
+    jobDesc:
+      "Prescription entry and medication fills. Inform patients with surface level medication cautions and intake directions.",
+
+    company: "CVS Pharmacy",
+    companyLocation: "Hatfield, Pennsylvania",
+  },
+];
+
+export const education: IEducation[] = [
+  {
+    education: "Bachelors in Sciences in Biochemistry",
+    where: "Temple University",
+    endDate: "January 2018",
+  },
+  {
+    education: "Complete 2021 Web Dev. Bootcamp",
+    where: "Udemy",
+    endDate: "February 2021",
+  },
+  {
+    education: "Understanding Typescript - 2021 ed.",
+    where: "Udemy",
+    endDate: "March 2021",
+  },
+  {
+    education: "React and Typescript",
+    where: "Udemy",
+    endDate: "March 2021",
+  },
+  {
+    education: "MERN Stack Front To Back",
+    where: "Udemy",
+    endDate: "December 2020",
+  },
+];
+
+
+export const languages = [
+  'Typescript',
+  'Javascript'
+]
+
+export const technologies = [
+  'ReactJS',
+  'NextJS',
+  'Redux',
+  'jQuery',
+  'Git',
+  'Jest',
+  'Enzyme',
+  'APIs',
+  'JSON',
+  'Ajax',
+  'REST',
+  'NodeJS',
+  'ExpressJS',
+  'MongoDB',
+  'Mongoose',
+  'Firebase',
+  'Amazon S3',
+  'Netlify',
+  'Heroku',
+  'CSS',
+  'SCSS/SASS',
+  'TailwindCSS',
+  'Styled-Components',
+  'Framer-motion'
+]

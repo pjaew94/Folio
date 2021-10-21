@@ -29,7 +29,7 @@ const AboutTabImg: React.FC<{
       custom={ref.current?.clientHeight}
     >
       <div ref={ref} className="">
-        <motion.p className="flex py-4 relative text-sm font-sans font-semibold pl-30percent">
+        <motion.p className="flex py-4 relative text-sm font-sans font-semibold pl-30percent text-black">
           {text}
         </motion.p>
         <Image

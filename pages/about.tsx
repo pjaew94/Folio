@@ -1,7 +1,3 @@
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
-import { motion } from "framer-motion";
-import { textUpVariant } from "../exports/animations";
 import { useState, useEffect } from "react";
 import AboutMobileContent from "./../components/AboutMobileContent";
 import AboutTabletDesktopContent from "../components/AboutTabletDesktopContent";
@@ -22,7 +18,7 @@ const About: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className='bg-beige'>
       {isWhat === 'isMobile' ? (
         <AboutMobileContent />
       ) : (

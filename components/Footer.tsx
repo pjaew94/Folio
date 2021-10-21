@@ -7,7 +7,7 @@ const Footer: React.FC<{toWork?: boolean}> = ({toWork}) => {
     <div className="flex flex-col justify-end items-end">
       <div className="overflow-hidden">
         <motion.h4
-          className=""
+          className=''
           variants={textUpVariant}
           initial="initial"
           animate="animate"
@@ -19,7 +19,7 @@ const Footer: React.FC<{toWork?: boolean}> = ({toWork}) => {
       </div>
       <div className="overflow-hidden">
         <motion.h4
-          className=""
+          className=''
           variants={textUpVariant}
           initial="initial"
           animate="animate"

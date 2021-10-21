@@ -20,10 +20,10 @@ const AboutTabletDesktopContent: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between h-screen w-screen px-6 pt-2 pb-5 md:p-10 3xl:p-16 overflow-hidden">
+    <div className="flex flex-col justify-between h-screen w-screen px-6 pt-2 pb-5 md:p-10 3xl:p-16 overflow-hidden bg-beige">
       <div className="overflow-hidden flex w-min self-end">
         <motion.h1
-          className="flex w-min"
+          className="flex w-min text-black"
           variants={textUpVariant}
           initial="initial"
           animate="animate"
@@ -94,9 +94,7 @@ const AboutTabletDesktopContent: React.FC = () => {
               return (
                 <motion.h3
                   key={i}
-                  className={`mb-3 text-xl font-sans cursor-pointer text-gray hover:text-white ${
-                    about.section === currFocus && "text-white"
-                  }  3xl:text-3xl-vw`}
+                  className={`mb-3 text-xl font-sans cursor-pointer text-gray hover:text-black ${currFocus === about.section && 'md:text-black'} 3xl:text-3xl-vw`}
                   variants={fadeUpTextVariant}
                   initial="initial"
                   animate="animate"

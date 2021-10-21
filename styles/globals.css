@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-black text-[#F9F9F9] overflow-x-hidden;
+    @apply bg-beige text-black overflow-x-hidden;
   }
   @font-face {
     font-family: "Sequel-Sans";
@@ -12,7 +12,6 @@
     font-weight: 400;
   }
   @font-face {
-    font-family: "Sequel-Sans";
     src: url("./fonts/Sequel\ Sans\ Semi\ Bold\ Disp.otf") format("opentype");
     font-weight: 600;
   }

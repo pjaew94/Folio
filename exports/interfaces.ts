@@ -55,3 +55,18 @@ export interface IAbout {
   currFocus?: this['section'],
   setCurrFocus?: Dispatch<SetStateAction<this['section']>>
 }
+
+export interface IWorkExperience {
+  startDate: string,
+  endDate: string,
+  jobTitle: string,
+  jobDesc: string,
+  company: string,
+  companyLocation: string,
+}
+
+export interface IEducation {
+  education: string,
+  where: string,
+  endDate: string
+}
