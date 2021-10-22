@@ -270,5 +270,14 @@ export const resumeSectionVariant = {
       duration: 0.5,
       bounce: 0,
     },
-  }
+  },
+  disappear: {
+    opacity: 0,
+    y:20,
+    transition: {
+      type: "spring",
+      duration: 0,
+      bounce: 0,
+    },
+  } 
 };

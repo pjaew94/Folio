@@ -1,37 +1,41 @@
-import { education } from "./../exports/variables";
-import { motion } from "framer-motion";
-import { resumeSectionVariant, textUpVariant } from "./../exports/animations";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { IResumeSection } from "../exports/interfaces";
+import { resumeSectionVariant } from "./../exports/animations";
+import { education } from './../exports/variables';
 
-const ResumeEdu: React.FC = () => {
+const ResumeEdu: React.FC<IResumeSection> = ({ currFocus, section }) => {
+  const textControl = useAnimation();
+
+  useEffect(() => {
+    if (currFocus === section) {
+      textControl.start("animate");
+    } else {
+      textControl.start("disappear");
+    }
+  }, [currFocus]);
+
   return (
-    <div className="flex flex-col w-5/12">
-      <div className="overflow-hidden">
-        <motion.h4
-          className="font-semibold text-xl"
-          variants={textUpVariant}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          custom={0.3}
-        >
-          Education
-        </motion.h4>
-      </div>
-
+    <div className="flex flex-col absolute  pb-28 w-full 2xl:pb-10percent">
       {education.map((edu, i) => {
         return (
           <motion.div
             key={i}
-            className="flex flex-col font-semibold mb-4"
+            className="flex flex-col mb-10"
             variants={resumeSectionVariant}
             initial="initial"
-            animate="animate"
+            animate={textControl}
             exit="exit"
-            custom={0.4 + i * 0.1}
           >
-            <h4 className="text-xs font-sans">{edu.endDate}</h4>
-            <h4 className="text-xs font-sans font-black ">{edu.education}</h4>
-            <h4 className="text-xs font-sans">- {edu.where}</h4>
+            <motion.p className="leading-7 text-3xl font-light border-t border-gray border-opacity-20 3xl:text-5xl">
+              {edu.education}
+            </motion.p>
+            <motion.p className="leading-7 text-3xl font-light border-t border-gray border-opacity-20 3xl:text-5xl">
+              {edu.where}
+            </motion.p>
+            <motion.p className="leading-7 text-3xl font-light border-t border-b border-gray border-opacity-20 3xl:text-5xl">
+              {edu.endDate}
+            </motion.p>
           </motion.div>
         );
       })}

@@ -361,12 +361,11 @@ export const education: IEducation[] = [
 ];
 
 
-export const languages = [
-  'Typescript',
-  'Javascript'
-]
+
 
 export const technologies = [
+  'Typescript',
+  'Javascript',
   'ReactJS',
   'NextJS',
   'Redux',
@@ -378,7 +377,10 @@ export const technologies = [
   'JSON',
   'Ajax',
   'REST',
-  'NodeJS',
+  'NodeJS'
+]
+
+export const technologies2 = [
   'ExpressJS',
   'MongoDB',
   'Mongoose',

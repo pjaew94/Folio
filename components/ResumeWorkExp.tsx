@@ -1,41 +1,34 @@
-import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { IResumeSection } from "../exports/interfaces";
 import { workExperiences } from "../exports/variables";
-import { resumeSectionVariant, textUpVariant } from "./../exports/animations";
+import { resumeSectionVariant } from "./../exports/animations";
 
-const ResumeWorkExp: React.FC = () => {
+const ResumeWorkExp: React.FC<IResumeSection> = ({
+  currFocus,
+  section,
+}) => {
+  const textControl = useAnimation();
+
+  useEffect(() => {
+      if(currFocus === section) {
+        textControl.start('animate')
+      } else {
+        textControl.start('disappear')
+      }
+  }, [currFocus])
+
+
   return (
-    <div className="flex flex-col w-5/12">
-      <div className="overflow-hidden">
-        <motion.h4
-          className="font-semibold text-xl"
-          variants={textUpVariant}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          custom={0.3}
-        >
-          Work
-        </motion.h4>
-      </div>
-
+    <div className="flex flex-col absolute pb-28 w-full md:pb-30percent 2xl:pb-10percent 3xl:pb-20percent">
       {workExperiences.map((exp, i) => {
-        return (
-          <motion.div
-            key={i}
-            className="flex flex-col font-semibold mb-4"
-            variants={resumeSectionVariant}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            custom={0.4 + i * 0.1}
-          >
-            <h4 className="text-xs font-sans">{exp.startDate}</h4>
-            <h4 className="text-xs font-sans">- {exp.endDate}</h4>
-            <h4 className="text-xs font-sans font-black ">{exp.jobTitle}</h4>
-            <h4 className="text-xs font-sans">{exp.company}</h4>
-            <h4 className="text-xs font-sans">{exp.companyLocation}</h4>
-          </motion.div>
-        );
+        return <motion.div key={i} className="flex flex-col mb-10" variants={resumeSectionVariant} initial='initial' animate={textControl} exit='exit'>
+          <motion.p className='leading-7 text-3xl font-light border-t border-gray border-opacity-20 3xl:text-5xl '>{exp.startDate}</motion.p>
+          <motion.p className='leading-7 text-3xl font-light border-t border-gray border-opacity-20 3xl:text-5xl '>{exp.endDate}</motion.p>
+          <motion.p className='leading-7 text-3xl font-light border-t border-gray border-opacity-20 3xl:text-5xl '>{exp.jobTitle}</motion.p>
+          <motion.p className='leading-7 text-3xl font-light border-t border-b border-gray border-opacity-20 3xl:text-5xl '>{exp.company}</motion.p>
+
+        </motion.div>;
       })}
     </div>
   );

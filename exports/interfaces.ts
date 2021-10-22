@@ -70,3 +70,14 @@ export interface IEducation {
   where: string,
   endDate: string
 }
+
+export interface IResumeTab {
+  currFocus: 'Work' | 'Edu.' | 'Tech.' | null,
+  setCurrFocus?: Dispatch<SetStateAction<this['currFocus']>>
+  section: this['currFocus']
+}
+
+export interface IResumeSection {
+  currFocus: IResumeTab['currFocus'],
+  section: IResumeTab['section']
+}

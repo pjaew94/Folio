@@ -38,6 +38,8 @@ module.exports = {
       },
       padding: {
         "30percent": "30%",
+        "20percent": "20%",
+        "10percent": "10%",
         "3xl": "22vw",
       },
       margin: {

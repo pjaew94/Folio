@@ -39,6 +39,13 @@
     font-weight: 400;
   }
 
+  @font-face {
+    font-family: "Shapiro";
+    src: url("./fonts/Shapiro\ 25\ Super\ Fly\ Text.otf") format("opentype");
+    font-weight: 300;
+  }
+
+
   h1 {
     @apply font-sans font-semibold text-8xl md:text-8xl xl:text-9xl;
   }
