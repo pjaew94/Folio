@@ -362,3 +362,30 @@ export const contactFormVariant = {
     },
   },
 }
+
+export const successReturnButtonVariant = {
+  initial: {
+    y: 50,
+    opacity: 0,
+  },
+  animate: (custom?: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 0.7,
+      bounce: 0,
+
+      delay: 0.5,
+    },
+  }),
+  exit: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      type: "spring",
+      duration: 0.5,
+      bounce: 0,
+    },
+  },
+}

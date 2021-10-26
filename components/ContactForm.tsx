@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import React, {useState} from "react";
 import { useForm } from "react-hook-form";
 import { contactFormVariant } from "../exports/animations";
-import { IContact, IContactForm } from "../exports/interfaces";
+import { IContactForm } from "../exports/interfaces";
 import FormField from "./FormField";
 import FormSubmitButton from "./FormSubmitButton";
 import emailjs from 'emailjs-com';
 
 const ContactForm: React.FC = () => {
-
+  const router = useRouter()
   const [isLoading, setIsLoading] = useState(false);
   
   const {
@@ -27,14 +27,16 @@ const ContactForm: React.FC = () => {
 
     const sendEmail = (serviceID: string, templateID:string , variables: any, userID: string) => {
       emailjs.send(serviceID, templateID, variables, userID).then((res) => {
-        console.log(res)
         setIsLoading(false);
+        router.push('/contact/success')
       }).catch(err => {
         console.error(err)
       })
     }
 
-    
+
+
+      setIsLoading(true);
      sendEmail(serviceID, templateID, data, userID)
     
 

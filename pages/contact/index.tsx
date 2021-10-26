@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import ContactMobile from "../components/ContactMobile";
-import ContactTabletDesktop from "../components/ContactTabletDesktop";
+import ContactMobile from "../../components/ContactMobile";
+import ContactTabletDesktop from "../../components/ContactTabletDesktop";
 
 
 const Contact: React.FC = () => {

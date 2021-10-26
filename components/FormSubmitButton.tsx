@@ -30,7 +30,7 @@ const FormSubmitButton: React.FC<{
     <motion.button
       type="submit"
       value="Submit"
-      className="flex mt-5 mr-2 bg-beige items-center w-min"
+      className="flex mt-5 mr-2 bg-beige items-center w-min disabled:opacity-20"
       variants={formSubmitButtonVariant}
       initial="initial"
       animate={buttonControls}
@@ -38,6 +38,7 @@ const FormSubmitButton: React.FC<{
       whileTap="pressed"
       onMouseEnter={() => hovered()}
       onMouseLeave={() => unHovered()}
+      disabled={isLoading ? true : false}
     >
       <span className="text-2xl mr-2 3xl:text-5xl 3xl:mr-11">Submit</span>
       <motion.div

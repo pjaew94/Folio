@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import Head from "next/head";
+
 import Navigation from "../components/Navigation";
 import Footer from "./../components/Footer";
 import { motion } from "framer-motion";
@@ -9,10 +9,6 @@ import { textUpVariant } from "./../exports/animations";
 const Home: NextPage = () => {
   return (
     <div className="flex justify-between flex-col h-screen w-screen px-6 pt-2 pb-5 md:p-10 3xl:p-16 overflow-hidden">
-      <Head>
-        <title>Jae Park Portfolio</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
 
       <div>
