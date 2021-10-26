@@ -12,7 +12,7 @@ const WorkTitle: React.FC<{ title: string[]; subString: string }> = ({
           return (
             <div className="overflow-hidden" key={i}>
               <motion.h1
-                className="text-6xl text-black mb-3 pr-10 md:pr-5 lg:text-7xl 2xl:text-8xl-vw"
+                className="text-6xl text-black mb-3 pr-10 md:pr-5 lg:text-7xl 2xl:text-8xl-vw font-semibold"
                 variants={textUpVariant}
                 initial="initial"
                 animate="animate"

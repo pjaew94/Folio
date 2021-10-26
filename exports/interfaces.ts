@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import { UseFormRegister } from "react-hook-form";
 
 export interface INavigation {
   route: string;
@@ -80,4 +81,27 @@ export interface IResumeTab {
 export interface IResumeSection {
   currFocus: IResumeTab['currFocus'],
   section: IResumeTab['section']
+} 
+
+export interface IContactForm {
+  firstName: string,
+  lastName: string,
+  email: string,
+  company: string,
+  comments: string,
+  phoneNumber?: string
+  
+}
+
+export interface IFormField {
+  field: "firstName" | "lastName" | "email" | "company" | "comments" | "phoneNumber" ,
+  label: string,
+  placeHolder: string,
+  errors?: string,
+  errorMsg?: string,
+  register: UseFormRegister<IContactForm>
+}
+
+export interface IContact {
+  setShowModal: Dispatch<SetStateAction<boolean>>
 }

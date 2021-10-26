@@ -44,10 +44,10 @@ const Resume: React.FC = () => {
         </div>
 
         <div className="flex justify-end w-full md:w-min md:flex-col md:mt-4">
-          <CustomLink url="123" download={true} text="Download" />
+          <CustomLink url="https://github.com/pjaew94" download={false} text="Download" />
           <CustomLink
             url="https://github.com/pjaew94"
-            download={true}
+            download={false}
             text="Github"
           />
         </div>

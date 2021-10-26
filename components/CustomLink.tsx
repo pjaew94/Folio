@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { fadeUpTextVariant } from "../exports/animations";
 
-const CustomLink: React.FC<{ url: string; download: boolean; text: string }> =
-  ({ url, download, text }) => {
+const CustomLink: React.FC<{ url: string; download: boolean; text: string, noMargin?: boolean }> =
+  ({ url, download, text, noMargin }) => {
     return (
       <motion.a
-      className='ml-4 md:ml-0 font-sans font-semibold md:text-2xl 3xl:text-3xl-vw'
+      className={`${!noMargin && 'ml-4'}`}
         href={url}
         target="_blank"
         variants={fadeUpTextVariant}
@@ -13,8 +13,9 @@ const CustomLink: React.FC<{ url: string; download: boolean; text: string }> =
         animate="animate"
         exit="exit"
         custom={0.3}
+        download={download}
       >
-        {text}
+        <h3>{text}</h3>
       </motion.a>
     );
   };

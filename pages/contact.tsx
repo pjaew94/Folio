@@ -1,16 +1,34 @@
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
+import ContactMobile from "../components/ContactMobile";
+import ContactTabletDesktop from "../components/ContactTabletDesktop";
+
 
 const Contact: React.FC = () => {
+
+
+  const [isMobile, setIsMobile] = useState(false);
+  if (typeof window !== "undefined") {
+    useEffect(() => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    }, [window.innerWidth]);
+  }
+
   return (
-    <div className='flex flex-col justify-between h-screen w-screen px-6 pt-2 pb-5'>
-        <div></div>
+    <div className="flex  h-screen w-screen px-6 pt-2 pb-5 3xl:p-16">
+      {isMobile && (
+        <ContactMobile
 
+        />
+      )}
+      {!isMobile && (
+        <ContactTabletDesktop
 
-      <div className="flex justify-between align-bottom">
-        <Navigation />
-        <Footer />
-      </div>
+        />
+      )}
     </div>
   );
 };

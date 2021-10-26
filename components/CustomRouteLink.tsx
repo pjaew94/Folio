@@ -23,9 +23,17 @@ const CustomRouteLink: React.FC<ICustomLink> = ({ route, text, index, toWork }) 
   }
 
   useEffect(() => {
+    let isMounted = true;
     setTimeout(() => {
-      setCurrPath(router.asPath);
+
+        
+        setCurrPath(router.asPath);
+      
     }, 500);
+
+    return() => {
+      isMounted = false
+    }
   }, []);
 
   const linkMouseEnter = async () => {

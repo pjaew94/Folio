@@ -44,14 +44,21 @@ module.exports = {
       },
       margin: {
         "3xl": "30vh",
+        "1/5": "20%",
+        "3/10": "30%",
+        "2/5": "40%"
       },
       height: {
         'aboutImgDim': "23vw",
         'aboutImgDim-md': "30vw"
       },
       width: {
+        '45%': '45%',
         'aboutImgDim': "23vw",
         'aboutImgDim-md': "30vw"
+      },
+      minHeight: {
+        '3/4': "75%"
       }
     },
   },
