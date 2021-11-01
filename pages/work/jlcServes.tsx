@@ -51,6 +51,7 @@ const JlcServes: React.FC = () => {
           paragraphs={projectList[0].summary}
           url={projectList[0].link}
           github={projectList[0].github}
+          abbreviation={projectList[0].abbreviation}
         />
 
         <WorkTextSections
@@ -88,6 +89,7 @@ const JlcServes: React.FC = () => {
           paragraphs={projectList[0].impact}
           url={projectList[0].link}
           github={projectList[0].github}
+          abbreviation={projectList[0].abbreviation}
         />
 
         <WorkTechStackList technologies={projectList[0].technologies} />

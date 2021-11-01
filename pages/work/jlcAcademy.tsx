@@ -54,6 +54,7 @@ const JlcAcademy: React.FC = () => {
           paragraphs={projectList[1].summary}
           url={projectList[1].link}
           github={projectList[1].github}
+          abbreviation={projectList[1].abbreviation}
         />
 
         {/* History */}
@@ -77,6 +78,7 @@ const JlcAcademy: React.FC = () => {
           paragraphs={projectList[1].impact}
           url={projectList[1].link}
           github={projectList[1].github}
+          abbreviation={projectList[1].abbreviation}
         />
 
         <WorkTechStackList technologies={projectList[1].technologies} />

@@ -5,7 +5,8 @@ const WorkSummarySection: React.FC<{
   paragraphs: string[];
   url: string;
   github: string;
-}> = ({ title, paragraphs, url, github }) => {
+  abbreviation?: string;
+}> = ({ title, paragraphs, url, github, abbreviation }) => {
 return (
     <div className="flex flex-col pr-6 md:px-28">
       <h1 className="text-4xl text-black mb-10 3xl:text-7xl 3xl:mb-20 font-semibold">{title}</h1>
@@ -15,8 +16,8 @@ return (
           <p key={i} className="text-base text-black mb-8 3xl:text-3xl 3xl:mb-16">{para}</p>
         );
       })}
-
-      <VisitWorkLink url={url} text="JLCServes.org" />
+  
+      <VisitWorkLink url={url} text={abbreviation === "jlcServes" ? "JLCServes.org" : "JLCAcademy.com"} />
       <VisitWorkLink url={github} text="Github" />
     </div>
   );

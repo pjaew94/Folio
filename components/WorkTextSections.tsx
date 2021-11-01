@@ -1,8 +1,9 @@
 import VisitWorkLink from "./VisitWorkLink";
 
-const WorkTextSections: React.FC<{ title: string; paragraphs: string[], url?: string, github?: string, margin?: boolean }> = ({
+const WorkTextSections: React.FC<{ title: string; paragraphs: string[], url?: string, abbreviation?: string, github?: string, margin?: boolean }> = ({
   title,
   paragraphs,
+  abbreviation,
   url,
   github,
   margin
@@ -18,7 +19,7 @@ const WorkTextSections: React.FC<{ title: string; paragraphs: string[], url?: st
         );
       })}
       
-      {url && <VisitWorkLink url={url} text="JLCServes.org" />}
+      {url && <VisitWorkLink url={url} text={abbreviation === "jlcServes" ? "JLCServes.org" : "JLCAcademy.com"} />}
       {github && <VisitWorkLink url={github} text="Github" />}
     </div>
   );
